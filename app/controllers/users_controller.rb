@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_authentication, except: [:new, :create]
   def new
     @user = User.new
   end
@@ -8,6 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in(@user)
       #redirect to images index
+      redirect_to root_url
     else
       flash.now[:errors] = @user.errors.full_messages
       render:new
