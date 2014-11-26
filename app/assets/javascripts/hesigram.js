@@ -4,6 +4,7 @@ window.Hesigram = {
   Views: {},
   Routers: {},
   initialize: function() {
+		new Router
     console.log('Get back to work!');
   }
 };

@@ -11,6 +11,7 @@ class ImagesController < ApplicationController
   
   #read
   def show
+    
   end
   
   def index
@@ -20,6 +21,11 @@ class ImagesController < ApplicationController
   
   #destroy 
   def destroy
+  end
+  
+  private 
+  def image_params
+    params.require(:image).permit(:image, :description)
   end
 end
 
