@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'backbone-on-rails'
 gem 'rails', '4.1.7'
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -30,6 +30,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-rails'
+  gem 'annotate'
   gem 'quiet_assets'
   gem 'byebug'
 end
