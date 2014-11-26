@@ -8,9 +8,9 @@ class User < ActiveRecord::Base
   
   after_initialize :ensure_session_token
   
-  def self.find_by_credentials(username, password)
-    user = User.find_by(username: username)
-    return nil unless user && user.valid_password?(password)
+  def self.find_by_credentials(user_params)
+    user = User.find_by_username(user_params[:username])
+    return nil unless user && user.valid_password?(user_params[:password])
     user
   end
   
@@ -30,7 +30,8 @@ class User < ActiveRecord::Base
     self.session_token
   end
   
-  private
+  protected
+  
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
