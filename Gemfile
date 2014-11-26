@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'bootstrap-sass'
 gem 'backbone-on-rails'
 gem 'rails', '4.1.7'
 # Use postgresql as the database for Active Record
@@ -49,4 +49,8 @@ gem 'newrelic_rpm'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+#gems for images uploading
+gem 'paperclip'
+gem 'aws-sdk'
 

@@ -4,7 +4,7 @@ window.Hesigram = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    console.log('Get back to work!');
   }
 };
 
