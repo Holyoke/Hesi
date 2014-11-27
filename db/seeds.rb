@@ -8,3 +8,16 @@
 
 u1 = User.create(username: 'player1', password: 'password')
 u2 = User.create(username: 'player2', password: 'password')
+
+Image.create!(user_id: u1.id,
+  description: "Cookie",
+  image: File.open("#{Rails.root}/seeds/cookies.gif"))
+  
+Image.create!(user_id: u1.id,
+  description: "Dog dancing",
+  image: File.open("#{Rails.root}/seeds/dogdancing.gif"))
+
+Image.create!(user_id: u1.id,
+  description: "Dog saying no",
+  image: File.open("#{Rails.root}/seeds/dogno.gif"))
+  

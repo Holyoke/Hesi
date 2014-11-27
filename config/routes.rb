@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  root to: 'root#root'
+  root 'root#root'
   
   resources :users
   resource :session
   
   namespace :api, defaults: { format: :json} do
-    resources :images
+    resources :images, only: [:show, :index]
   end
 end
