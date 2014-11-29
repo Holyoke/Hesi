@@ -8,8 +8,6 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by_credentials(params[:user])
     
-    debugger
-    
     if @user
       sign_in!(@user)
       redirect_to api_images_url
