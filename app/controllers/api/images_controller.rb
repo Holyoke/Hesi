@@ -1,5 +1,5 @@
 class Api::ImagesController < ApplicationController
-  before_action :require_authentication
+  # before_action :require_authentication
   
   #create image
   def new 
@@ -14,8 +14,8 @@ class Api::ImagesController < ApplicationController
   end
   
   def index
-    @images = current_user.images
-    
+    #replace User.first with current_user
+    @images = User.find(4).images
     render :index
   end
   
