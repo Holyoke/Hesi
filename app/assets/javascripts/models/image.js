@@ -1,3 +1,5 @@
 Hesigram.Models.Image = Backbone.Model.extend({
-	urlRoot: "/api/images"
+	urlRoot: "/api/images",
+	
+	//build associations here 
 });

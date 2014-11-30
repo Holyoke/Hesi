@@ -5,7 +5,7 @@ window.Hesigram = {
   Routers: {},
   initialize: function() {
 		new Hesigram.Routers.Router({
-			$rootEl : $("#main")
+			$rootEl : $("#content")
 		})
     console.log('Get back to work!');
   }

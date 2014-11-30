@@ -1,6 +1,8 @@
 Hesigram.Views.ImagesIndex = Backbone.View.extend({
 
-  template: JST['images/index']
+  template: JST['images/index'],
+	
+	
 
 });
 
