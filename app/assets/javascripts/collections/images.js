@@ -7,7 +7,7 @@ Hesigram.Collections.Images = Backbone.Collection.extend({
     var images = this;
 
     var image;
-    if (!!image)) {
+    if (!!image) {
       image.fetch();
     } else {
       image = new Hesigram.Models.Image({ id: id });

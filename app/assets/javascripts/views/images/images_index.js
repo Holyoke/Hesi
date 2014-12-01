@@ -7,7 +7,6 @@ Hesigram.Views.ImagesIndex = Backbone.View.extend({
   template: JST['images/index'],
 	
 	render: function () {
-		debugger
 		var content = this.template({
 			images: this.collection
 		});
