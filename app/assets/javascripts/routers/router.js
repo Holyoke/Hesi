@@ -4,15 +4,17 @@ Hesigram.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    '': 'ImageIndex',
+    "" : 'ImageIndex',
   },
 	
 	//just trying to show all the users images 
 	ImageIndex: function (){
+		console.log("congrats you hit imageindex");
+		Hesigram.Collections.images.fetch();
+		debugger
 		var view = Hesigram.Views.ImagesIndex({
-			collection: Hesigram.images
+			collection: Hesigram.Collections.images
 		});
-		
 		this._swapView(view);
 	},
 	

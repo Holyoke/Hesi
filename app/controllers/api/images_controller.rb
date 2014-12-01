@@ -11,6 +11,8 @@ class Api::ImagesController < ApplicationController
   
   #read
   def show
+    @image = Image.find(params[:id])
+    render :show
   end
   
   def index

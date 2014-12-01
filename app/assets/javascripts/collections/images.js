@@ -22,4 +22,4 @@ Hesigram.Collections.Images = Backbone.Collection.extend({
 });
 
 //global images
-Hesigram.images = new Hesigram.Collections.Images ();
+Hesigram.Collections.images = new Hesigram.Collections.Images ();

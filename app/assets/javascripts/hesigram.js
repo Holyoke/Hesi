@@ -3,12 +3,15 @@ window.Hesigram = {
   Collections: {},
   Views: {},
   Routers: {},
+	
   initialize: function() {
 		new Hesigram.Routers.Router({
-			$rootEl : $("#content")
-		})
-    console.log('Get back to work!');
+			$rootEl: $("#content")
+		});
+		
+		Backbone.history.start();
   }
+	
 };
 
 $(document).ready(function(){
