@@ -6,17 +6,17 @@ Hesigram.Collections.Images = Backbone.Collection.extend({
   getOrFetch: function (id) {
     var images = this;
 
-    var images;
-    if (images = this.get(id)) {
-      images.fetch();
+    var image;
+    if (!!image)) {
+      image.fetch();
     } else {
-      images = new Hesigram.Models.Image({ id: id });
-      images.fetch({
+      image = new Hesigram.Models.Image({ id: id });
+      image.fetch({
         success: function () { images.add(images); }
       });
     }
 
-    return images;
+    return image;
   }
 
 });
