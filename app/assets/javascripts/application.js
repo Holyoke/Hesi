@@ -11,6 +11,16 @@
 // about supported directives.
 //= require jquery
 //= require jquery_ujs
+
+//cloudinary setup
+//= require cloudinary
+//= require fileupload-image
+//= require fileupload-process
+//= require fileupload-validate
+//= require fileupload
+//= require iframe-transport
+//= require ui.widget
+	
 //= require underscore
 //= require backbone
 //= require hesigram
@@ -20,3 +30,5 @@
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree .
+
+
