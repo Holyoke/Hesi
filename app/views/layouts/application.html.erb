@@ -10,6 +10,8 @@
 <body>
 
 <% if signed_in? %>
+	 <%= cl_image_tag(current_user.avatar.path,
+	  { size: '50x50', crop: :fit, gravity: :face }) %>
 	<%= current_user.username %>
 	<%= button_to "Sign Out...", session_url, method: :delete %>
 <% else %>
