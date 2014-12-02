@@ -13,14 +13,20 @@
 //= require jquery_ujs
 
 //cloudinary setup
-//= require jquery.cloudinary
-//= require jquery.fileupload-image
-//= require jquery.fileupload-process
-//= require jquery.fileupload-validate
-//= require jquery.fileupload
-//= require jquery.iframe-transport
-//= require jquery.ui.widget
 	
+//= require jquery.ui.widget
+//= require jquery.iframe-transport
+//= require jquery.fileupload
+	
+//cloudinary resizing 
+//= require load-image.min.js
+//= require canvas-to-blob.min.js
+//= require jquery.fileupload-process.js
+//= require jquery.fileupload-image.js
+//= require jquery.fileupload-validate.js
+
+//= require jquery.cloudinary
+
 //= require underscore
 //= require backbone
 //= require hesigram

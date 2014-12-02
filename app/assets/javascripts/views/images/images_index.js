@@ -12,7 +12,7 @@ Hesigram.Views.ImagesIndex = Backbone.View.extend({
 		});
 		
 		this.$el.html(content);
-		
+		this.$el.find("#test").append($.cloudinary.image("dogno_uvzq61"));
 		return this;
 	},
 	
