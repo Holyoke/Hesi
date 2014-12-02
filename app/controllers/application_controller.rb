@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :signed_in?
   
   def current_user  
-    @current_user = User.find_by(session_token: session[:token])
+    @current_user ||= User.find_by(session_token: session[:session_token])
   end
     
   def require_authentication
@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
     session[:session_token] = user.reset_token!
   end
   
-  def sign_out
+  def sign_out!
     current_user.try(:reset_token!)
     session[:session_token] = nil
   end

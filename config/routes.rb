@@ -1,6 +1,5 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do 
   mount Attachinary::Engine => "/attachinary"
-  
   root 'root#root'
   
   resources :users

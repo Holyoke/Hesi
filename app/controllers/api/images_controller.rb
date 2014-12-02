@@ -17,7 +17,8 @@ class Api::ImagesController < ApplicationController
   
   def index
     #replace User.first with current_user
-    @images = User.find(4).images
+    # @images = User.find(4).images
+    @images = current_user.images
     render :index
   end
   

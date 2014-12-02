@@ -24,4 +24,5 @@ window.Hesigram = {
 
 $(document).ready(function(){
   Hesigram.initialize();
+	$('.attachinary-input').attachinary()
 });

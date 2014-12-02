@@ -13,16 +13,15 @@
 class User < ActiveRecord::Base
   validates :username, :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true}
+  # validates :avatar, presence: true
   
   attr_reader :password
   
-  has_many :images
+  # has_many :images
   
   #attachinary usage
   has_attachment :avatar, accept: [:jpg, :png]
   has_attachments :images, maximum: 5
-  
-  validates :avatar, presence: true
   
   after_initialize :ensure_session_token
   

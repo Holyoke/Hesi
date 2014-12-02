@@ -1,5 +1,5 @@
 <h1>Sign Up!</h1>
-
+<%= cloudinary_js_config %>
 <%= render "layouts/errors" %>
 
 <form action="<%= users_url %>" method="post">
@@ -12,11 +12,16 @@
 	<label>Password
 		<input type="password" name="user[password]" value="">
 	</label>
-	
 	<p>Attachinary uploading</p>
-	<%= @user.attachinary_file_field :avatar %>
-	<%= @user.attachinary_file_field :images %>
+	<%= form_for(@user) do |f| %>
+		<p>Upload Avatar
+			<%= f.attachinary_file_field :avatar %>
+		</p>
+		<p>Upload up to 5 Images
+			<%= f.attachinary_file_field :images %>
+		</p>
+		<input type="submit" name="commit" value="Sign Up">
+	<% end %>
 	
-	<input type="submit" value="Sign Up">
 	
 </form>
