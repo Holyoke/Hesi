@@ -13,6 +13,10 @@
 		<input type="password" name="user[password]" value="">
 	</label>
 	
+	<p>Attachinary uploading</p>
+	<%= @user.attachinary_file_field :avatar %>
+	<%= @user.attachinary_file_field :images %>
+	
 	<input type="submit" value="Sign Up">
 	
 </form>

@@ -27,6 +27,7 @@
 //= require jquery.fileupload-validate.js
 
 //= require jquery.cloudinary
+//= require attachinary
 
 //= require underscore
 //= require backbone

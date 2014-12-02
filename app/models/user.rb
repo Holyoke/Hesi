@@ -18,6 +18,12 @@ class User < ActiveRecord::Base
   
   has_many :images
   
+  #attachinary usage
+  has_attachment :avatar, accept: [:jpg, :png]
+  has_attachments :images, maximum: 5
+  
+  validates :avatar, presence: true
+  
   after_initialize :ensure_session_token
   
   def self.find_by_credentials(user_params)
