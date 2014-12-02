@@ -9,8 +9,8 @@ window.Hesigram = {
 		
 		//global variables in application.html.erb
 		$.cloudinary.config({ 
-			cloud_name: CName,
-			api_key: CKey
+			cloud_name: "maybenaut",
+			api_key: 635635438388839
 		});
 		
 		
