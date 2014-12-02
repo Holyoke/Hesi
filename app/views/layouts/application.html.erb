@@ -16,6 +16,12 @@
 	<%= link_to "Sign Up!", new_user_url %>
 <% end %>
 
+<script>
+	CName = <%= ENV["CLOUD_Name"] %>;
+	CKey = <%= ENV["CLOUD_Key"] %>;
+	CSecret = <%= ENV["CLOUD_Secret"] %>;
+</script>
+
 <%= yield %>
 
 </body>

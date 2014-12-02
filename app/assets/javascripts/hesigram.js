@@ -8,8 +8,8 @@ window.Hesigram = {
 		
 		
 		$.cloudinary.config({ 
-			cloud_name: 'maybenaut',
-			api_key: '635635438388839'
+			cloud_name: CName,
+			api_key: CKey
 		});
 		
 		

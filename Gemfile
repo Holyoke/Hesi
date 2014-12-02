@@ -49,8 +49,4 @@ gem 'newrelic_rpm'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-#gems for images uploading
-gem 'paperclip'
-gem 'aws-sdk'
-
+gem "figaro"
