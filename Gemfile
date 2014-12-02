@@ -50,3 +50,10 @@ gem 'newrelic_rpm'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem "figaro"
+
+#image uploads
+gem "cloudinary"
+gem 'attachinary'
+
+#deprecated
+gem "paperclip"

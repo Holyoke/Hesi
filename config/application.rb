@@ -1,4 +1,5 @@
 require File.expand_path('../boot', __FILE__)
+require "attachinary/orm/active_record"
 
 require 'rails/all'
 
