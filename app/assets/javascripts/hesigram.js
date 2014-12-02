@@ -13,9 +13,6 @@ window.Hesigram = {
 			api_key: 635635438388839
 		});
 		
-		debugger
-		
-		
 		new Hesigram.Routers.Router({
 			$rootEl: $("#content")
 		});
