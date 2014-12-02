@@ -7,6 +7,7 @@ window.Hesigram = {
   initialize: function() {
 		
 		
+		//global variables in application.html.erb
 		$.cloudinary.config({ 
 			cloud_name: CName,
 			api_key: CKey

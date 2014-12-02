@@ -13,13 +13,13 @@
 //= require jquery_ujs
 
 //cloudinary setup
-//= require cloudinary
-//= require fileupload-image
-//= require fileupload-process
-//= require fileupload-validate
-//= require fileupload
-//= require iframe-transport
-//= require ui.widget
+//= require jquery.cloudinary
+//= require jquery.fileupload-image
+//= require jquery.fileupload-process
+//= require jquery.fileupload-validate
+//= require jquery.fileupload
+//= require jquery.iframe-transport
+//= require jquery.ui.widget
 	
 //= require underscore
 //= require backbone
