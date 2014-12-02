@@ -11,7 +11,8 @@
 // about supported directives.
 //= require jquery
 //= require jquery_ujs
-
+//= require jquery.serializejson
+	
 //cloudinary setup
 	
 //= require jquery.ui.widget
