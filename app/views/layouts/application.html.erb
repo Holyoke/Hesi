@@ -11,13 +11,18 @@
 
 <% if signed_in? %>
 	 <%= cl_image_tag(current_user.avatar.path,
-	  { size: '50x50', crop: :fit, gravity: :face }) %>
+	  { size: '50x50'}) %>
 	<%= current_user.username %>
 	<%= button_to "Sign Out...", session_url, method: :delete %>
+	
+	<% current_user.images.each do |img| %>
+	    <%= cl_image_tag(img.path, { size: '125x125', crop: :fit }) %>
+	<% end %>
 <% else %>
 	<%= link_to "Sign In", new_session_url %>
 	<%= link_to "Sign Up!", new_user_url %>
 <% end %>
+
 
 
 <!--Figaro constants -->

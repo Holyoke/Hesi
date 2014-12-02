@@ -12,3 +12,5 @@ to send @ user
 -my fetch doesn't work
 
 -images controller doesn't work 
+
+-can i access ruby in ejs
