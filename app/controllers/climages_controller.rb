@@ -8,6 +8,7 @@ class ClimagesController < ApplicationController
   
   #upload images
   def new
+    @climage = Climagew.new 
   end
   
   def create
