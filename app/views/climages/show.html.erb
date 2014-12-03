@@ -1,5 +1,20 @@
 <h1><a href="/climages"> Cloud Image Show Page</a></h1>
+<% filter = "" %>
+<% filters = %w{negate sepia oil_paint vignette grayscale blackwhite pixelate} %>
+<h4><%= @climage.caption %></h4>
+<br>
+<%= cl_image_tag(@climage.public_id, 
+:radius => 20, :width => 800, :height => 800, :crop => :fill,
+:format => :png, :effect => filter) %>
 
-	<%= cl_image_tag(@climage.public_id, 
-	:radius => 10,
-	:format => :png, :effect => "negate") %>
+
+
+<div class="filters">Freaking Filters
+	<br>
+	<% filters.each do |filter| %>
+		<%= cl_image_tag(@climage.public_id, 
+		:radius => 25, :size => "100x100", :crop => :fill,
+		:format => :png, :effect => filter) %>
+	<% end %>
+	
+</div>

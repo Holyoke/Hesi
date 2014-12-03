@@ -24,6 +24,15 @@ class ClimagesController < ApplicationController
   end
   
   def show
+    #this is so bad
+    #it adds the image to the ClImages model so it can be viewed
+    #wow
+    climage = current_user.climages(:public_id => params[:id])
+    
+    unless current_user.climages.include? (climage)
+      current_user.climages.create(:public_id => params[:id])
+    end
+    
     @climage = ClImage.friendly.find(params[:id])
     render :show
   end
