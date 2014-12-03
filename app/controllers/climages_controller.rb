@@ -15,8 +15,7 @@ class ClimagesController < ApplicationController
   
   def create
     @climage = ClImage.new(climage_params)
-    debugger
-    if @climage.save
+    if current_user.climages(climage_params).save
       redirect_to climag_url(@climage)
     else
       flash.now[:errors] = @climage.errors.full_messages

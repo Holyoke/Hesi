@@ -1,1 +1,5 @@
-<h1>Cloud Image Show Page</h1>
+<h1><a href="/climages"> Cloud Image Show Page</a></h1>
+
+	<%= cl_image_tag(@climage.public_id, 
+	:radius => 10,
+	:format => :png, :effect => "negate") %>

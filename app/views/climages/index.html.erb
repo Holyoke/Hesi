@@ -1,7 +1,9 @@
 <h1>10 images from the cloudinary</h1>
 
 <% @images_id.each do |public_id| %>
+	<a href="/climages/2">
 	<%= cl_image_tag(public_id, 
 	:width => 200, :height => 300, :crop => :fill, :radius => 20,
 	:format => :png, :negate => "on") %>
+	</a>
 <% end %>
