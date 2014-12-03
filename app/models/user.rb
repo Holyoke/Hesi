@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   
   attr_reader :password
   
-  # has_many :images
+  has_many :cl_images
   
   #attachinary usage
   has_attachment :avatar, accept: [:jpg, :png]

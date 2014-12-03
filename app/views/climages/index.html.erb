@@ -3,5 +3,5 @@
 <% @images_id.each do |public_id| %>
 	<%= cl_image_tag(public_id, 
 	:width => 200, :height => 300, :crop => :fill, :radius => 20,
-	:format => :png) %>
+	:format => :png, :negate => "on") %>
 <% end %>

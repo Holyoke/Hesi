@@ -1,0 +1,9 @@
+<p>Attachinary uploading</p>
+<%= form_for(@user) do |f| %>
+	<p>Upload Avatar
+		<%= f.attachinary_file_field :avatar %>
+	</p>
+	<p>Upload up to 5 Images
+		<%= f.attachinary_file_field :images %>
+	</p>
+<% end %>

@@ -8,11 +8,23 @@ class ClimagesController < ApplicationController
   
   #upload images
   def new
-    @climage = Climagew.new 
+    @climage = ClImages.new()
+    render :new
   end
   
   def create
-    
+    @climage = CLImages.new(climage_params)
+    if @climage.save
+      redirect_to climag_url(@climage)
+    else
+      flash.now[:errors] = @climage.errors.full_messages
+      render :new
+    end
+  end
+  
+  def show
+    @climage = CLImages.find(params[:id])
+    render :show
   end
   
   
