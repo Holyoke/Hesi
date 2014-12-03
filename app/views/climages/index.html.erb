@@ -1,0 +1,6 @@
+<h1>10 images from the cloudinary</h1>
+
+<% @images_id.each do |public_id| %>
+	<%= cl_image_tag(public_id, :width => 100, :height => 150, :crop => :fill) %>
+	<br>
+<% end %>

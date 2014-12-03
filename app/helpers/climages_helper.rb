@@ -1,0 +1,2 @@
+module ClimagesHelper
+end
