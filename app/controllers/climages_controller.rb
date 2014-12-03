@@ -28,8 +28,18 @@ class ClimagesController < ApplicationController
     render :show
   end
   
+  def update
+   @climage = ClImage.find(params[:id])
+   if @climage.update_attributes(self.climage_params)
+     render "show"
+   else
+     render :json => @climage.errors, :status => :unprocessable_entity
+   end
+  end
+  
   private 
   def climage_params
-    params.require(:climage).permit(:public_id)
+    debugger
+    params.require(:cl_image).permit(:public_id)
   end
 end

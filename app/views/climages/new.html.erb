@@ -3,10 +3,42 @@
 	<p>Upload Avatar
 		<%= f.attachinary_file_field :avatar %>
 	</p>
-	<%= f.submit %>
+	
+	<p>Upload Images 1
+		<%= f.attachinary_file_field :images %>
+	</p>
+	<p>Upload Images 2
+		<%= f.attachinary_file_field(:images, { tags: "hesigram"} )%>
+	</p>
+	<%= f.submit("Save")%>
 <% end %>
 
-<p>Other uploading</p>
-<%= form_tag("climages/", :method => :post) do  %>
-  <%= cl_image_upload_tag(:image_id) %>
+
+<p>CarrerWaveUploading 1</p>
+<%= form_for(@climage, :url => climages_path) do |f| %>
+  <div class="form_line">
+    <%= f.label :caption, "Caption:" %>
+    <div class="form_controls">
+      <%= f.text_field :caption %>
+    </div>
+  </div>
+  <div class="form_line">
+    <%= f.label :public_id, "Image:" %>
+    <div class="form_controls">
+      <%= f.file_field :public_id %>
+    </div>
+  </div>
+  <div class="form_line">
+    <div class="form_controls">
+      <%= f.submit "Submit Image" %>
+      <% if @error %><span class="error"><%= @error %></span><% end %>
+    </div>
+  </div>
+  <%= hidden_field_tag :direct, params[:direct] %>
+<% end %>
+
+<p>CarrierWave Uploading 2</p>
+<%= form_tag("/climages" , :method => :post) do  %>
+  <%= cl_image_upload_tag(:image_id, :crop => :limit, :width => 1000, :height => 1000, 
+                          :html => {:class => "image_upload"}) %>
 <% end %>

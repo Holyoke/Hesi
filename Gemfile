@@ -59,3 +59,4 @@ gem "paperclip"
 #image uploads
 gem "cloudinary"
 gem 'attachinary'
+gem "carrierwave"
