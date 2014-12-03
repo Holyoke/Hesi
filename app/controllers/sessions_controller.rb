@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     
     if @user
       sign_in!(@user)
-      redirect_to '#'
+      redirect_to '/climages'
     else
       flash.now[:errors] = ["Invalid credentials"]
       render :new

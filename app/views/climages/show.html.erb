@@ -1,6 +1,6 @@
 <h1><a href="/climages"> Cloud Image Show Page</a></h1>
 <% filter = "" %>
-<% filters = %w{negate sepia oil_paint vignette grayscale blackwhite pixelate} %>
+<% filters = %w{blackwhite negate sepia oil_paint vignette grayscale  pixelate_faces:4 blur_faces } %>
 <h4><%= @climage.caption %></h4>
 <br>
 <%= cl_image_tag(@climage.public_id, 

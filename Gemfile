@@ -51,7 +51,7 @@ gem 'newrelic_rpm'
 # gem 'debugger', group: [:development, :test]
 gem "figaro"
 gem "friendly_id"
-
+gem "kaminari"
 
 #deprecated
 gem "paperclip"
