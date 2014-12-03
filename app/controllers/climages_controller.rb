@@ -24,7 +24,7 @@ class ClimagesController < ApplicationController
   end
   
   def show
-    @climage = ClImage.find(params[:id])
+    @climage = ClImage.friendly.find(params[:id])
     render :show
   end
   

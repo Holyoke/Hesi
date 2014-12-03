@@ -50,7 +50,7 @@ gem 'newrelic_rpm'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem "figaro"
-
+gem "friendly_id"
 
 
 #deprecated

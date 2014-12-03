@@ -11,6 +11,9 @@
 #
 
 class ClImage < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :public_id, :use => :slugged
+  
   belongs_to(
     :user,
     primary_key: :id,
