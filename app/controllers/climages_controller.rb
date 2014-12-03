@@ -8,12 +8,14 @@ class ClimagesController < ApplicationController
   
   #upload images
   def new
-    @climage = ClImages.new()
+    @climage = ClImage.new()
+    @user = current_user
     render :new
   end
   
   def create
-    @climage = CLImages.new(climage_params)
+    @climage = ClImage.new(climage_params)
+    debugger
     if @climage.save
       redirect_to climag_url(@climage)
     else
@@ -23,10 +25,9 @@ class ClimagesController < ApplicationController
   end
   
   def show
-    @climage = CLImages.find(params[:id])
+    @climage = ClImage.find(params[:id])
     render :show
   end
-  
   
   private 
   def climage_params

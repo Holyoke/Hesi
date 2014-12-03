@@ -10,12 +10,12 @@
 #  updated_at :datetime
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  uploader_id: 1
-  caption: MyString
-
-two:
-  uploader_id: 1
-  caption: MyString
+class ClImage < ActiveRecord::Base
+    
+    belongs_to(
+      :user,
+      primary_key: :id,
+      foreign_key: :user_id,
+      class_name: "User"
+    )
+end
