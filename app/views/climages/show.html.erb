@@ -12,9 +12,17 @@
 <div class="filters">Freaking Filters
 	<br>
 	<% filters.each do |filter| %>
+		<a href=<%= cl_image_path(@climage.public_id, 
+		:radius => 25,
+		:format => :png, :effect => filter) 
+		%>>
+			
+		<!--thumbnail -->
 		<%= cl_image_tag(@climage.public_id, 
 		:radius => 25, :size => "100x100", :crop => :fill,
 		:format => :png, :effect => filter) %>
+		</a>
 	<% end %>
+	
 	
 </div>

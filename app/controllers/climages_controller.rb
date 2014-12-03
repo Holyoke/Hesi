@@ -16,7 +16,7 @@ class ClimagesController < ApplicationController
   def create
     @climage = ClImage.new(climage_params)
     if current_user.climages(climage_params).save
-      redirect_to climag_url(@climage)
+      redirect_to climage_url(@climage)
     else
       flash.now[:errors] = @climage.errors.full_messages
       render :new
@@ -28,7 +28,6 @@ class ClimagesController < ApplicationController
     #it adds the image to the ClImages model so it can be viewed
     #wow
     climage = current_user.climages(:public_id => params[:id])
-    
     unless current_user.climages.include? (climage)
       current_user.climages.create(:public_id => params[:id])
     end

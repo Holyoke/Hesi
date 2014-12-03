@@ -3,7 +3,7 @@
 	<a href="/climages/qpvskvuduwdjwempsk4t">
 	<%= cl_image_tag("qpvskvuduwdjwempsk4t", 
 	:width => 300, :height => 300, :crop => :fill, :radius => 20,
-	:format => :png, :negate => "on") %>
+	:format => :png) %>
 	</a>
 	
 <% @images_id.each do |public_id| %>
@@ -14,7 +14,7 @@
 	:border => {:width => 4, :color => "grey"},
 	:transformation => [
 		{:effect => "shadow"}, 
-		{:effect => "negate"}] ) %>
+		{:effect =>  ""}] ) %>
 	</a>
 <% end %>
 
