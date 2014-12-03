@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   
   #attachinary usage
   has_attachment :avatar, accept: [:jpg, :png]
-  has_attachments :images, accept: [:jpg, :png, :gif]
+  has_attachment :images, accept: [:jpg, :png, :gif]
   
   after_initialize :ensure_session_token
   

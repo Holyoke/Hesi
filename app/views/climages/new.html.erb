@@ -11,7 +11,15 @@
 		<%= f.attachinary_file_field(:images, { tags: "hesigram"} )%>
 	</p>
 	<%= f.submit("Save")%>
-<% end %>
+<% end %>	
+
+Climage Upload?
+<%= form_for(@climage, url: climages_path) do |f| %>
+	<p>Upload Images 
+		<%= f.attachinary_file_field(:images, { tags: "hesigram"} )%>
+	</p>
+	<%= f.submit("Upload")%>
+<% end %>	
 
 
 <p>CarrerWaveUploading 1</p>

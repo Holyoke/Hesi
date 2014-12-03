@@ -22,11 +22,18 @@ class UsersController < ApplicationController
   end
   
   def update
-    redirect_to "/climages"
+    @user = User.find(params[:id])
+    if @user.save
+      debugger
+      redirect_to "/climages"
+    else
+      flash.now[:errors] = @user.errors.full_messages
+      render :new
+    end
   end
   
   private
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :images)
   end
 end

@@ -39,7 +39,6 @@ class ClimagesController < ApplicationController
   
   private 
   def climage_params
-    debugger
     params.require(:cl_image).permit(:public_id)
   end
 end
