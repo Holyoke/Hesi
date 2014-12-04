@@ -11,14 +11,14 @@ class Api::ImagesController < ApplicationController
   
   #read
   def show
-    @image = Image.find(params[:id])
+    @image = ClImage.find(params[:id])
     render :show
   end
   
   def index
     #replace User.first with current_user
     # @images = User.find(4).images
-    @images = current_user.images
+    @images = current_user.climages
     render :index
   end
   

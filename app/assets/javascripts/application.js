@@ -32,6 +32,7 @@
 //= require underscore
 //= require backbone
 //= require hesigram
+//= require bootstrap
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
