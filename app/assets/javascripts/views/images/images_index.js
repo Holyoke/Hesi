@@ -6,7 +6,7 @@ Hesigram.Views.ImagesIndex = Backbone.View.extend({
 	
 	events: {
 		'submit form' : 'uploadFile',
-		'cloudinarydone' : 'uploadFile',
+		'cloudinarydone' : 'render',
 		'cloudinaryprogress' : 'thumbnails',
 		'cloudinaryprogress' : 'progressBar'
 	},
@@ -21,12 +21,23 @@ Hesigram.Views.ImagesIndex = Backbone.View.extend({
 		this.$el.html(content);
 		
 		//test image
+		
+		// <%= cl_image_tag(public_id,
+		// :width => 300, :height => 300, :crop => :fill, :radius => 20,
+		// :format => :png,
+		// :border => {:width => 2, :color => "grey"},
+		// :transformation => [
+		// 	{:effect => "shadow"},
+		// 	{:effect =>  ""}] ) %>
 		var that = this; 		
 		this.collection.each(function (image){
 			that.$el.find("#test").append(
 				$.cloudinary.image(image.escape("public_id"),
-				 { effect:'negate'}));
-		});
+					{ width: 300, height:300, crop: "fill", radius: 20,
+						format: "png", 
+						border: {width: 2, color: "grey"},
+						effect:'negate'}));
+			});
 		
 		//test file
 		$('.upload_form').html($.cloudinary.unsigned_upload_tag("smidynat", 
