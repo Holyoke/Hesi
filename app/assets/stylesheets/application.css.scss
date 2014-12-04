@@ -17,9 +17,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+    background-color: #92CCA6;
+}
+
+nav {
+	background-color: #f5f5dc;
+	radius: 20px;
+}
+
+
+
 .spinner {
   width: 100px;
   height: 100px;
+	radius: 20px;
   background-color: #333;
 
   margin: 300px auto;

@@ -13,18 +13,16 @@
 	<div class="session">
 		<ul class="nav nav-tabs">
 			<% if signed_in? %>
-					<%= render 'shared/image_upload' %>
+					<%= cl_image_tag(current_user.avatar.path,
+					{:width => 50, :height => 50, :crop => :fill, :radius => 20, :effect => "shadow"}) %>
 					<div class=".nav-pills">
 						<%= current_user.username %>
+						<%= render 'shared/image_upload' %>
 					</div>
 				<%= button_to "Sign Out...", session_url, method: :delete %>
-				<!--put upload button here -->
+
 				
-				<%= form_tag("/climages" , :method => :post) do  %>
-				  <%= cl_image_upload_tag(:image_id, :crop => :limit, :width => 1000, :height => 1000, 
-				                          :html => {:class => "image_upload"}) %>
-				<% end %>
-				
+
 				
 				
 		<% else %>

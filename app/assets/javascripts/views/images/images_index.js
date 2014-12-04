@@ -34,8 +34,8 @@ Hesigram.Views.ImagesIndex = Backbone.View.extend({
 				$.cloudinary.image(image.escape("public_id"),
 					{ width: 300, height:300, crop: "fill", radius: 20,
 						format: "png", 
-						border: {width: 2, color: "grey"},
-						effect:'negate'}));
+						border: {width: 2, color: "#FCF0AD"},
+						effect:''}));
 			});
 		
 		//test file
