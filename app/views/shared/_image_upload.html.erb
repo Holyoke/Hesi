@@ -1,0 +1,14 @@
+<%= cl_image_tag(current_user.avatar.path,
+{:width => 50, :height => 50, :crop => :fill, :radius => 20, :effect => "shadow"}) %>
+					
+<script>
+	$(function(){
+		var $uploader = $('.image_upload');
+		$uploader.on('cloudinaryprogress', function(){
+			$('body').prepend('<div class="spinner"></div>')
+		});
+		$uploader.on('cloudinarydone', function(){
+			location.reload();
+		})
+	})
+</script>					

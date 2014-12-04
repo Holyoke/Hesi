@@ -13,8 +13,7 @@
 	<div class="session">
 		<ul class="nav nav-tabs">
 			<% if signed_in? %>
-				 <%= cl_image_tag(current_user.avatar.path,
-				  {:width => 50, :height => 50, :crop => :fill, :radius => 20, :effect => "shadow"}) %>
+					<%= render 'shared/image_upload' %>
 					<div class=".nav-pills">
 						<%= current_user.username %>
 					</div>

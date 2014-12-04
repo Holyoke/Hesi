@@ -7,7 +7,6 @@ Hesigram.Views.ImagesIndex = Backbone.View.extend({
 	events: {
 		'submit form' : 'uploadFile',
 		'cloudinarydone' : 'render',
-		'cloudinaryprogress' : 'thumbnails',
 		'cloudinaryprogress' : 'progressBar'
 	},
 
@@ -46,13 +45,6 @@ Hesigram.Views.ImagesIndex = Backbone.View.extend({
 		return this;
 	},
 	
-	uploadFile: function(event,data) {
-		$('.upload_form').unsigned_cloudinary_upload("smidynat", 
-		  { cloud_name: 'maybenaut', tags: 'browser_uploads' }, 
-		  { multiple: true }
-		);
-	},
-	
 	thumbnails: function (event,data) {
 		$('.thumbnails').append($.cloudinary.image(data.result.public_id, 
 		    { format: 'jpg', width: 150, height: 100, 
@@ -60,6 +52,7 @@ Hesigram.Views.ImagesIndex = Backbone.View.extend({
 	},
 	
 	progressBar: function (event, data) {
+		debugger
 	  $('.progress_bar').css('width', 
 	    Math.round((data.loaded * 100.0) / data.total) + '%'); 
 	}
