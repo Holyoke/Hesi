@@ -1,7 +1,7 @@
 Rails.application.routes.draw do 
   mount Attachinary::Engine => "/attachinary"
   
-  root 'root#root'
+  root "sessions#new"
   
   resources :users
   resource :session
