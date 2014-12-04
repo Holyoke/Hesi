@@ -21,7 +21,13 @@ Hesigram.Views.ImagesIndex = Backbone.View.extend({
 		this.$el.html(content);
 		
 		//test image
-		this.$el.find("#test").append($.cloudinary.image("dogno_uvzq61", { effect:'negate'}));
+		var that = this; 		
+		this.collection.each(function (image){
+			that.$el.find("#test").append(
+				$.cloudinary.image(image.escape("public_id"),
+				 { effect:'negate'}));
+		});
+		
 		//test file
 		$('.upload_form').html($.cloudinary.unsigned_upload_tag("smidynat", 
 		  { cloud_name: 'maybenaut' }));
