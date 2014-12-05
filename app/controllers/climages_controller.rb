@@ -17,7 +17,7 @@ class ClimagesController < ApplicationController
     if params[:image_id].present?
       preloaded = Cloudinary::PreloadedFile.new(params[:image_id])         
       raise "Invalid upload signature" if !preloaded.valid?
-      
+
       current_user.climages.create(public_id: preloaded.public_id)
       redirect_to "/climages"
     else

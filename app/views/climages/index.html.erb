@@ -1,10 +1,4 @@
 <h1>Images</h1>
-
-	<a href="/climages/qpvskvuduwdjwempsk4t">
-	<%= cl_image_tag("qpvskvuduwdjwempsk4t", 
-	:width => 300, :height => 300, :crop => :fill, :radius => 20,
-	:format => :png) %>
-	</a>
 	
 <% @images_id.each do |public_id| %>
 	<a href="/climages/<%= public_id %>">
@@ -18,5 +12,10 @@
 	</a>
 <% end %>
 
+<a href="/climages/qpvskvuduwdjwempsk4t">
+	<%= cl_image_tag("qpvskvuduwdjwempsk4t", 
+	:width => 300, :height => 300, :crop => :fill, :radius => 20,
+	:format => :png) %>
+</a>
 
 <p>What pagination</p>
