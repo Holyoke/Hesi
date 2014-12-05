@@ -32,7 +32,7 @@ Hesigram.Views.ImagesIndex = Backbone.View.extend({
 		this.collection.each(function (image){
 			that.$el.find("#test").append(
 				$.cloudinary.image(image.escape("public_id"),
-					{ width: 300, height:300, crop: "fill", radius: 20,
+					{ radius: 20, width: 300, height:300, crop: "fill", 
 						format: "png", 
 						border: {width: 2, color: "#FCF0AD"},
 						effect:''}));

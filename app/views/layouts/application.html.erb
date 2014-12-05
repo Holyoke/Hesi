@@ -7,36 +7,61 @@
   <%= csrf_meta_tags %>
 	<%= cloudinary_js_config %>
 </head>
-<body>
-
-<nav>
-	<div class="session">
-		<ul class="nav nav-tabs">
-			<% if signed_in? %>
-					<%= cl_image_tag(current_user.avatar.path,
-					{:width => 50, :height => 50, :crop => :fill, :radius => 20, :effect => "shadow"}) %>
-					<div class=".nav-pills">
-						<%= current_user.username %>
-						<%= render 'shared/image_upload' %>
-					</div>
-				<%= button_to "Sign Out...", session_url, method: :delete %>
-
-				
-
-				
-				
-		<% else %>
-			<%= link_to "Sign In", new_session_url %>
-			<%= link_to "Sign Up!", new_user_url %>
-		<% end %>
-		</ul>
-	</div>
-</nav>
 
 
-<!--Figaro constants -->
-<div class="container">
-	<%= yield %>
-</div>
-</body>
+<body data-spy="scroll">
+  <header>
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#hesi-navbar-collapse-1">
+      <!-- this is the unicode character that approximates a menu icon.
+      Better to get an image in your own app. -->
+      &#9776;
+    </button>
+    <%= link_to "Hesi", "/climages", :class => "navbar-brand"%>
+  </div>
+  <div class="collapse navbar-collapse" id="demo-project-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li><%= link_to("My Images", "/#/demo") if signed_in? %>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <%if signed_in?%>
+      <li>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=current_user.username%><b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a href="<%=user_url current_user%>">Profile</a></li>
+        <li class="divider"></li>
+        <li><%= link_to "Sign Out", session_url, method: :delete %></li>
+				<li><%= render "shared/image" %></li>
+      </ul>
+      </li>
+			
+      <% else %>
+      <li><button 
+        class="btn btn-primary" 
+        data-toggle="modal" 
+        data-target="#signInModal">Sign In
+      </button>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  </nav>
+  </header>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+
+
+  <div class="modal fade" id="signInModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <%= render 'shared/user' %>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+</body>
+
 </html>
