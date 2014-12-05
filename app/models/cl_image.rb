@@ -20,7 +20,5 @@ class ClImage < ActiveRecord::Base
     foreign_key: :user_id,
     class_name: "User"
   )
-  
   has_attachment :images, accept: [:jpg, :png, :gif]
-  
 end

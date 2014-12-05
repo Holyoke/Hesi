@@ -1,8 +1,7 @@
 <div class="form-group">
-	<%= form_tag("/climages" , :method => :post) do  %>
+	<%= form_tag("/climages" , :method => :post, id: 'img-upload') do  %>
 	  <%= cl_image_upload_tag(:image_id, :crop => :limit, :width => 1000, :height => 1000, 
-	                          :html => {:class => "image_upload"}) %>
-		<%= submit_tag("Confirm")%>
+	                          :html => {:class => "image_upload glyphicon glyphicon-camera"}) %>
 	<% end %>
 </div>
 <script>
@@ -12,8 +11,21 @@
 			$('body').prepend('<div class="spinner"></div>')
 		});
 		$uploader.on('cloudinarydone', function(){
-			debugger
 			$(".spinner").remove();
-		})
+			setTimeout(function () {
+				var data = $('#img-upload').serializeJSON();
+				$.ajax({
+					url: '/climages',
+					type: 'POST',
+					data: data,
+					success: function () {
+						console.log(arguments)
+					},
+					error: function (attribute) {
+						console.log(arguments)
+					},
+				})
+			}, 1000);
+		});
 	})
 </script>

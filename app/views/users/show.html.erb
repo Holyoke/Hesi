@@ -1,1 +1,8 @@
 <h1>User Show Page</h1>
+<p>Avatar</p>
+<div class="greet">Hi <%= @user.username %>, how about that avatar?</div>
+
+<%= form_for(@user) do |f| %>
+		<%= f.attachinary_file_field :avatar %>
+	<%= f.submit %>
+<% end %>	

@@ -15,20 +15,14 @@
 
 class Image < ActiveRecord::Base
   belongs_to :user
-  
 	has_attached_file(
   # use default url for missing images 
 		:image,
 		styles: {
 			medium: "600x600>",
 			thumb: "150x150>"
-			},
-
+			}
 	)
-  
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
-  
-    
-    
   #fill in comments. has many of them
 end
