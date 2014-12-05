@@ -67,9 +67,9 @@ Hesigram.Views.ImagesIndex = Backbone.View.extend({
 			});
 		
 		//test file
-		$('.upload_form').html($.cloudinary.unsigned_upload_tag("smidynat", 
-		  { cloud_name: 'maybenaut' }));
-		
+		// $('.upload_form').html($.cloudinary.unsigned_upload_tag("smidynat",
+		//   { cloud_name: 'maybenaut' }));
+		//
 		return this;
 	},
 	

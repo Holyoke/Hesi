@@ -13,15 +13,19 @@
   <header>
   <nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header">
-		<a class="brand" href="/climages"> <img src="http://res.cloudinary.com/maybenaut/image/upload/v1417765378/hlogobest_av3ce7.png"></a>
+		<a class="brand" href="/climages">
+			<img src="http://res.cloudinary.com/maybenaut/image/upload/v1417765378/hlogobest_av3ce7.png">
+		</a>
   </div>
   <div class="collapse navbar-collapse" id="demo-project-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li><%= link_to("My Images", "/#/demo") if signed_in?  %></li>
     </ul>
+		
 		<ul class="nav navbar-nav navbar-center">
 			<li><%= render "shared/image_upload" if signed_in?  %></li>
 		</ul>
+		
     <ul class="nav navbar-nav navbar-right">
       <%if signed_in?%>
       <li>
