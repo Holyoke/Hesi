@@ -19,7 +19,7 @@
 			
 		<!--thumbnail -->
 		<%= cl_image_tag(@climage.public_id, 
-		:radius => 25, :size => "100x100", :crop => :fill,
+		:radius => 25, :size => "100x100", :crop => :fill,  :class => "filter-thumbnails",
 		:format => :png, :effect => filter) %>
 		</a>
 	<% end %>
