@@ -17,6 +17,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
 body {
     background-color: #92CCA6;
 }
@@ -24,6 +26,13 @@ body {
 nav {
 	background-color: #f5f5dc;
 	radius: 20px;
+}
+
+.thumbnails {
+  transition: all  0.5s ease;
+}
+.thumbnails:hover {
+	transform: rotate(8deg) scale(1.25);
 }
 
 .spinner {

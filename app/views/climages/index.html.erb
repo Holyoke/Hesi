@@ -1,27 +1,30 @@
 <h1>Feed</h1>
-	
-<% @images_id.each do |public_id| %>
-	<a href="/climages/<%= public_id %>">
-	<%= cl_image_tag(public_id, 
-	:width => 300, :height => 300, :crop => :fill, :radius => 20,
-	:format => :png,
-	:border => {:width => 2, :color => "grey"},
-	:transformation => [
-		{:effect => "shadow"}, 
-		{:effect =>  ""}] ) %>
-	</a>
-<% end %>
 
-<a href="/climages/qpvskvuduwdjwempsk4t">
-	<%= cl_image_tag("qpvskvuduwdjwempsk4t", 
-	:width => 300, :height => 300, :crop => :fill, :radius => 20,
-	:format => :png) %>
-</a>
+<div class="wrapper">	
+	<div class="gallery">
+		<% @images_id.each do |public_id| %>
+			<a href="/climages/<%= public_id %>">
+			<%= cl_image_tag(public_id, :class => "thumbnails",
+			:width => 300, :height => 300, :crop => :fill, :radius => 20,
+			:format => :png,
+			:border => {:width => 2, :color => "grey"},
+			:transformation => [
+				{:effect => "shadow"}, 
+				{:effect =>  ""}] ) %>
+			</a>
+		<% end %>
 
-<a href="/climages/zmlnjszioy16ozbn4v8v">
-	<%= cl_image_tag("zmlnjszioy16ozbn4v8v", 
-	:width => 300, :height => 300, :crop => :fill, :radius => 20,
-	:format => :png) %>
-</a>
+		<a href="/climages/qpvskvuduwdjwempsk4t">
+			<%= cl_image_tag("qpvskvuduwdjwempsk4t", :class => "thumbnails",
+			:width => 300, :height => 300, :crop => :fill, :radius => 20,
+			:format => :png) %>
+		</a>
 
+		<a href="/climages/zmlnjszioy16ozbn4v8v">
+			<%= cl_image_tag("zmlnjszioy16ozbn4v8v", :class => "thumbnails",
+			:width => 300, :height => 300, :crop => :fill, :radius => 20,
+			:format => :png) %>
+		</a>
+	</div>
+</div>
 <p>What pagination</p>
