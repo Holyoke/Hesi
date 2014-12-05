@@ -18,7 +18,7 @@ class Api::ImagesController < ApplicationController
   def index
     #replace User.first with current_user
     # @images = User.find(4).images
-    @images = current_user.climages
+    @images = current_user.climages.reverse
     render :index
   end
   

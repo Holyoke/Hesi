@@ -26,7 +26,12 @@ nav {
 	radius: 20px;
 }
 
-
+.navbar-center > li {
+  margin: 0 auto;
+  display: table;
+  table-layout: fixed;
+  float:none;
+}
 
 .spinner {
   width: 100px;
