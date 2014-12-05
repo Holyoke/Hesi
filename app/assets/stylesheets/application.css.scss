@@ -42,6 +42,13 @@ nav {
 	transform: rotate(-360deg) 
 }
 
+.filter-thumbnails {
+  transition: all  0.5s ease;
+}
+.filter-thumbnails:hover {
+	transform: rotate(10deg) 
+}
+
 .spinner {
   width: 100px;
   height: 100px;
