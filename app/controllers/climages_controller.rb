@@ -26,7 +26,11 @@ class ClimagesController < ApplicationController
     end
   end
   
-  def show    
+  def show
+    climage = current_user.climages(:public_id => params[:id])
+     unless current_user.climages.include? (climage)
+       current_user.climages.create(:public_id => params[:id])
+     end    
     @climage = ClImage.friendly.find(params[:id])
     render :show
   end
