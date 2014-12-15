@@ -1,4 +1,5 @@
 class ClimagesController < ApplicationController
+  before_filter :require_authentication
   
   def index
     resources = Cloudinary::Api.resources["resources"]
@@ -27,7 +28,7 @@ class ClimagesController < ApplicationController
   end
   
   def show
-    climage = current_user.climages(:public_id => params[:id])
+    climage = current_user.climages(:public_id => params[:id]) 
      unless current_user.climages.include? (climage)
        current_user.climages.create(:public_id => params[:id])
      end    
