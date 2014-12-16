@@ -1,28 +1,17 @@
-== README
+== HESI README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hesi is an Instagram inspired image application. It is built with Ruby on Rails and Backbone.js. Hesi utilizes the Cloudinary service and API for image uploading, effects, and storage. 
 
-Things you may want to cover:
+Notable feature is the HTMl5 image uploading, which allows image uploading from both computers and smartphones. Cloudinary now has a jQuery plugin which is employed into the HTML; this allows image uploading to avoid extra server-side work and have the client-side to respond faster. An aJax call is used on successful image uploads to extract and deliver upload data asynchronously to the Rails server. 
 
-* Ruby version
+Current features are user sign-up, authentication, image uploading, and effects. There is a Guest login for demo purposes.
 
-* System dependencies
+ToDo:
 
-* Configuration
+* Captions
 
-* Database creation
+* Comments
 
-* Database initialization
+* Polymorphic Association 
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
